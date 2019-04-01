@@ -56,7 +56,7 @@ const imageInlineSizeLimit = parseInt(
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 // Check if emotion babel plugin should be applied
-const shouldApplyEmotionPlugin = require('./utils/shouldApplyEmotionBabelPlugin')
+const shouldApplyEmotionPlugin = require('./utils/shouldApplyEmotionBabelPlugin');
 
 // style files regexes
 const cssRegex = /\.css$/;
@@ -442,13 +442,10 @@ module.exports = function(webpackEnv) {
                 plugins: [
                   // https://www.smooth-code.com/open-source/loadable-components/docs/server-side-rendering/
                   require.resolve('@loadable/babel-plugin'),
-                  shouldApplyEmotionPlugin &&
-                    [
-                      'emotion',
-                      {
-                        labelFormat: isEnvDevelopment ? '[local]-[filename]' : '[local]',
-                      }
-                    ],
+                  shouldApplyEmotionPlugin && [
+                    'emotion',
+                    require('./utils/getEmotionBabelPluginConfig'),
+                  ],
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
