@@ -51,7 +51,7 @@ if (['build', 'eject', 'start', 'test', 'build:server', 'start:server', 'test:se
   process.exit(result.status);
 } else {
   console.log('Unknown script "' + script + '".');
-  console.log('Perhaps you need to update react-scripts?');
+  console.log('Perhaps you need to update @soulpicks/react-scripts?');
   console.log(
     'See: https://facebook.github.io/create-react-app/docs/updating-to-new-releases'
   );
