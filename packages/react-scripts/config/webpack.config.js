@@ -427,10 +427,6 @@ module.exports = function(webpackEnv) {
                       quality: '65-90',
                       speed: 4,
                     },
-                    // the webp option will enable WEBP
-                    webp: {
-                      quality: 75,
-                    },
                   },
                 },
               ],
