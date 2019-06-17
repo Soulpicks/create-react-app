@@ -411,7 +411,7 @@ module.exports = function(webpackEnv) {
             },
             // https://www.npmjs.com/package/image-webpack-loader
             {
-              test: [/\.png$/, /\.webp$/],
+              test: [/\.png$/],
               use: [
                 {
                   loader: require.resolve('file-loader'),
@@ -422,7 +422,30 @@ module.exports = function(webpackEnv) {
                 {
                   loader: 'image-webpack-loader',
                   options: {
-                    // optipng.enabled: false will disable optipng
+                    optipng: {
+                      enabled: false,
+                    },
+                    pngquant: {
+                      quality: '65-90',
+                      speed: 4,
+                    }
+                  },
+                },
+              ],
+            },
+            // https://www.npmjs.com/package/image-webpack-loader
+            {
+              test: [/\.png\?webp$/, /\.webp$/],
+              use: [
+                {
+                  loader: require.resolve('file-loader'),
+                  options: {
+                    name: 'static/media/[name].[hash:8].[ext]',
+                  },
+                },
+                {
+                  loader: 'image-webpack-loader',
+                  options: {
                     optipng: {
                       enabled: false,
                     },
@@ -431,7 +454,7 @@ module.exports = function(webpackEnv) {
                       speed: 4,
                     },
                     webp: {
-                      quality: 80
+                      quality: 85
                     }
                   },
                 },
