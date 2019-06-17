@@ -444,18 +444,9 @@ module.exports = function(webpackEnv) {
                   },
                 },
                 {
-                  loader: 'image-webpack-loader',
+                  loader: 'image-webp-loader',
                   options: {
-                    optipng: {
-                      enabled: false,
-                    },
-                    pngquant: {
-                      quality: '65-90',
-                      speed: 4,
-                    },
-                    webp: {
-                      quality: 85
-                    }
+                    quality: 85
                   },
                 },
               ],
