@@ -412,7 +412,11 @@ module.exports = function(webpackEnv) {
             // https://www.npmjs.com/package/image-webpack-loader
             {
               test: [/\.png$/],
+              resourceQuery: /[?&](sizes|placeholder)(=|&|\[|$)/,
               use: [
+                {
+                  loader: 'srcset-loader',
+                },
                 {
                   loader: require.resolve('file-loader'),
                   options: {
@@ -433,10 +437,13 @@ module.exports = function(webpackEnv) {
                 },
               ],
             },
-            // https://www.npmjs.com/package/image-webpack-loader
             {
-              test: [/\.png\?webp$/, /\.webp$/],
+              test: [/\.webp$/],
+              resourceQuery: /[?&](sizes|placeholder)(=|&|\[|$)/,
               use: [
+                {
+                  loader: 'srcset-loader',
+                },
                 {
                   loader: require.resolve('file-loader'),
                   options: {
@@ -444,9 +451,11 @@ module.exports = function(webpackEnv) {
                   },
                 },
                 {
-                  loader: 'image-webp-loader',
+                  loader: 'image-webpack-loader',
                   options: {
-                    quality: 85
+                    webp: {
+                      quality: 75
+                    }
                   },
                 },
               ],
