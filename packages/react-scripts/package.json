@@ -53,8 +53,6 @@
     "fs-extra": "7.0.1",
     "html-webpack-plugin": "4.0.0-beta.5",
     "identity-obj-proxy": "3.0.0",
-    "image-webp-loader": "^1.2.1",
-    "image-webpack-loader": "^4.6.0",
     "is-wsl": "^1.1.0",
     "isomorphic-style-loader": "^5.0.1",
     "jest": "24.9.0",
