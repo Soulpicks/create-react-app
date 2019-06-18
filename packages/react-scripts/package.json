@@ -1,6 +1,6 @@
 {
   "name": "@soulpicks/react-scripts",
-  "version": "3.20.0",
+  "version": "3.21.0",
   "description": "Soulpicks' configuration and scripts for Create React App.",
   "repository": "Soulpicks/create-react-app",
   "license": "MIT",
@@ -27,6 +27,7 @@
     "@babel/core": "7.6.0",
     "@loadable/babel-plugin": "^5.10.0",
     "@loadable/webpack-plugin": "^5.7.1",
+<<<<<<< HEAD
     "@svgr/webpack": "4.3.2",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
@@ -36,6 +37,17 @@
     "babel-loader": "8.0.6",
     "babel-plugin-named-asset-import": "^0.3.4",
     "babel-preset-react-app": "^9.0.2",
+=======
+    "@soulpicks/responsive-loader": "^1.1.0",
+    "@svgr/webpack": "4.2.0",
+    "@typescript-eslint/eslint-plugin": "1.10.2",
+    "@typescript-eslint/parser": "1.10.2",
+    "babel-eslint": "10.0.1",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "8.0.5",
+    "babel-plugin-named-asset-import": "^0.3.2",
+    "babel-preset-react-app": "^9.0.0",
+>>>>>>> use responsive loader with webp support
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "2.1.1",
