@@ -1,6 +1,6 @@
 {
   "name": "@soulpicks/react-scripts",
-  "version": "3.27.0",
+  "version": "3.28.0",
   "description": "Soulpicks' configuration and scripts for Create React App.",
   "repository": "Soulpicks/create-react-app",
   "license": "MIT",
@@ -70,6 +70,8 @@
     "postcss-safe-parser": "4.0.1",
     "react-app-polyfill": "^1.0.4",
     "react-dev-utils": "^9.1.0",
+    "remark-kbd": "^1.0.19",
+    "remark-loader": "^0.3.2",
     "resolve": "1.12.0",
     "resolve-url-loader": "3.1.0",
     "responsive-loader": "github:ghetolay/responsive-loader#webp",
