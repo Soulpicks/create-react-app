@@ -1,6 +1,6 @@
 {
   "name": "@soulpicks/react-scripts",
-  "version": "3.41.0",
+  "version": "3.42.0",
   "description": "Soulpicks' configuration and scripts for Create React App.",
   "repository": "Soulpicks/create-react-app",
   "license": "MIT",
@@ -67,6 +67,7 @@
     "jest": "24.9.0",
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.9.0",
+    "jest-transformer-md": "^1.0.1",
     "jest-watch-typeahead": "0.4.0",
     "mdx-frontmatter-loader": "^0.1.1",
     "mdx-loader": "^3.0.2",
