@@ -53,7 +53,7 @@ const imageInlineSizeLimit = parseInt(
 );
 
 // Check if TypeScript is setup
-const useTypeScript = fs.existsSync(paths.appTsConfig);
+const _useTypeScript = fs.existsSync(paths.appTsConfig);
 
 // Check if emotion babel plugin should be applied
 const shouldApplyEmotionPlugin = require('./utils/shouldApplyEmotionBabelPlugin');
@@ -66,7 +66,7 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
-module.exports = function(webpackEnv) {
+module.exports = function(webpackEnv, useTypeScript = _useTypeScript) {
   const isEnvDevelopment = webpackEnv === 'development';
   const isEnvProduction = webpackEnv === 'production';
 
