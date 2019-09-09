@@ -8,7 +8,8 @@ const camelcase = require('camelcase');
 
 module.exports = {
   process(src, filename) {
-    const assetFilename = JSON.stringify(path.basename(filename));
+    const assetFilename = path.basename(filename);
+    const assetFilenameParsed = JSON.stringify(assetFilename);
 
     if (filename.match(/\.svg$/)) {
       // Based on how SVGR generates a component name:
@@ -16,23 +17,44 @@ module.exports = {
       const pascalCaseFilename = camelcase(path.parse(filename).name, {
         pascalCase: true,
       });
-      const componentName = `Svg${pascalCaseFilename}`;
-      return `const React = require('react');
-      module.exports = {
-        __esModule: true,
-        default: ${assetFilename},
-        ReactComponent: React.forwardRef(function ${componentName}(props, ref) {
-          return {
-            $$typeof: Symbol.for('react.element'),
-            type: 'svg',
-            ref: ref,
-            key: null,
-            props: Object.assign({}, props, {
-              children: ${assetFilename}
-            })
-          };
-        }),
-      };`;
+      const componentName = `Svg${pascalCaseFileName}`;
+      return `
+        const React = require('react');
+        module.exports = {
+          __esModule: true,
+          default: ${assetFilenameParsed},
+          ReactComponent: React.forwardRef(function ${componentName}(props, ref) {
+            return {
+              $$typeof: Symbol.for('react.element'),
+              type: 'svg',
+              ref: ref,
+              key: null,
+              props: Object.assign({}, props, {
+                children: ${assetFilenameParsed}
+              })
+            };
+          }),
+        };
+      `;
+    }
+
+    if (filename.match(/\.(png|webp|jpg|jpeg)$/)) {
+      const mockedSrc = assetFilename;
+      const mockedSrcSet = `${assetFilename} w200`;
+      const mockedPlaceholder = true;
+
+      return `
+        module.exports = {
+          __esModule: true,
+          default: {
+            src: ${JSON.stringify(mockedSrc)},
+            srcSet: ${JSON.stringify(mockedSrcSet)},
+            width: 100,
+            height: 100,
+            placeholder: ${mockedPlaceholder}
+          },
+        };
+      `;
     }
 
     return `module.exports = ${assetFilename};`;
