@@ -1,6 +1,6 @@
 {
   "name": "@soulpicks/react-scripts",
-  "version": "3.51.0",
+  "version": "3.51.0-beta",
   "description": "Soulpicks' configuration and scripts for Create React App.",
   "repository": "Soulpicks/create-react-app",
   "license": "MIT",
