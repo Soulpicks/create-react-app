@@ -686,7 +686,13 @@ module.exports = function(
             manifest[file.name] = file.path;
             return manifest;
           }, seed);
-          const entrypointFiles = entrypoints.main.filter(
+          let entrypointFiles = entrypoints.main
+
+          if (Object.keys(entrypoints).length > 1) {
+            entrypointFiles = Object.values(entrypoints).reduce((acc, curr) => { acc.push(...curr); return acc; }, [])
+          }
+
+          entrypointFiles = entrypointFiles.filter(
             fileName => !fileName.endsWith('.map')
           );
 
