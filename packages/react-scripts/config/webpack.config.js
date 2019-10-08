@@ -686,7 +686,7 @@ module.exports = function(
             manifest[file.name] = file.path;
             return manifest;
           }, seed);
-          let entrypointFiles = entrypoints.main;
+          let entrypointFiles = entrypoints.main || [];
 
           if (Object.keys(entrypoints).length > 1) {
             entrypointFiles = Object.values(entrypoints).reduce((acc, curr) => {
