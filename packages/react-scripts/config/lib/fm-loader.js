@@ -14,13 +14,13 @@ module.exports = async function(src) {
 
   let code;
   if (resourceQuery.frontMatter === 'only') {
-    code = `export const frontMatter = ${stringifyObject(data)}`;
+    code = `export const frontMatter = ${stringifyObject(data)};`;
   } else if (resourceQuery.frontMatter === 'omit') {
     code = content;
   } else {
-    code = `export const frontMatter = ${stringifyObject(data)}
+    code = `export const frontMatter = ${stringifyObject(data)};
 
-    ${content}`;
+    ${content};`;
   }
 
   return callback(null, code);
