@@ -1,6 +1,6 @@
 {
   "name": "@soulpicks/react-scripts",
-  "version": "3.52.0",
+  "version": "3.52.2",
   "description": "Soulpicks' configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=8.10"
+    "node": ">=10.17"
   },
   "bugs": {
     "url": "https://github.com/Soulpicks/create-react-app/issues"
@@ -36,8 +36,8 @@
     "@mdx-js/tag": "^0.20.3",
     "@soulpicks/responsive-loader": "^2.0.0",
     "@svgr/webpack": "4.3.3",
-    "@typescript-eslint/eslint-plugin": "^2.10.0",
-    "@typescript-eslint/parser": "^2.10.0",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.0.6",
@@ -103,7 +103,7 @@
     "fsevents": "2.1.2"
   },
   "peerDependencies": {
-    "typescript": "^3.2.1"
+    "typescript": "^3.7.5"
   },
   "peerDependenciesMeta": {
     "typescript": {
