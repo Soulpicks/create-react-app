@@ -19,7 +19,7 @@ process.on('unhandledRejection', err => {
   throw err;
 });
 process.on('uncaughtException', err => {
-  console.error('Uncaught Exception:', err)
+  console.error('Uncaught Exception:', err);
 });
 
 // Ensure environment variables are read.
@@ -114,7 +114,7 @@ checkBrowsers(paths.appPath, isInteractive)
       console.log();
 
       const appPackage = require(paths.appPackageJson);
-      const publicUrl = paths.publicUrl;
+      const publicUrl = paths.publicUrlOrPath;
       const publicPath = config.output.publicPath;
       const buildFolder = path.relative(process.cwd(), paths.appBuild);
       printHostingInstructions(
