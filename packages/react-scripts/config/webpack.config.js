@@ -673,7 +673,8 @@ module.exports = function(
             manifest[file.name] = file.path;
             return manifest;
           }, seed);
-          const entrypointFiles = entrypoints.main.filter(
+          const entries = entrypoints.main || entrypoints['/index'] || [];
+          const entrypointFiles = entries.filter(
             fileName => !fileName.endsWith('.map')
           );
 
